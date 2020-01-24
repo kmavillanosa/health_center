@@ -12,6 +12,8 @@ namespace HealthCenter.UI.Controls.Modules
 {
     public partial class AccountsView : UserControl , IModule
     {
+        public AccountType AccountType { get; set; }
+
         public IHealthCenterService HealthCenterService { get; }
         public IControlsFactory ControlsFactory { get; }
         private BindingSource AccountListBinding { get; set; } = new BindingSource();

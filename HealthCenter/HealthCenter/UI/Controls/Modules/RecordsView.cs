@@ -12,6 +12,8 @@ namespace HealthCenter.UI.Controls.Modules
 {
     public partial class RecordsView : UserControl ,IModule
     {
+        public AccountType AccountType { get; set; }
+        
         private BindingSource PersonListBinding = new BindingSource();
         private BindingSource ConsultationListBinding = new BindingSource();
         List<Person> PersonList = new List<Person>();

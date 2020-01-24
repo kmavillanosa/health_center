@@ -60,6 +60,7 @@ namespace HealthCenter.UI.Controls
 
                         ControlsFactory.ShellView.Controls.Clear();
                         var dd = ControlsFactory.Resolve<NavigationView>();
+                        dd.AccountType = data.Type;
                         dd.Dock = DockStyle.Fill;
                         ControlsFactory.ShellView.Controls.Add(dd);
                     }

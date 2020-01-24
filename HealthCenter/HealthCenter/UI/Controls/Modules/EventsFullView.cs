@@ -15,6 +15,8 @@ namespace HealthCenter.UI.Controls.Modules
 {
     public partial class EventsFullView : UserControl, IModule
     {
+        public AccountType AccountType { get; set; }
+
         BindingSource EventLogBinding = new BindingSource();
         List<PersonEvents> EventList { get; set; } = new List<PersonEvents>();
         public EventsFullView(IHealthCenterService healthCenterService,

@@ -12,6 +12,8 @@ namespace HealthCenter.UI.Controls.Modules
 {
     public partial class OtherDetailsView : UserControl , IModule
     {
+        public AccountType AccountType { get; set; }
+
         public OtherDetailsView(IHealthCenterService healthCenterService,
             IControlsFactory controlsFactory)
         {

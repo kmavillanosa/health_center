@@ -20,7 +20,7 @@ namespace HealthCenter
             OverlayHelper helper = new OverlayHelper(this);
         }
 
-        public Autofac.IContainer Container { get; set; }
+        public Autofac.IContainer AppContainer { get; set; }
 
         public void InitializeDependencies()
         {
@@ -56,14 +56,14 @@ namespace HealthCenter
 
             }).As<IHealthCenterService>().SingleInstance();
 
-            Container = builder.Build();
+            AppContainer = builder.Build();
 
            
-            var controlsFactory = Container.Resolve<IControlsFactory>();
-            var modules = Container.Resolve<IEnumerable<IModule>>();
-            var pages = Container.Resolve<IEnumerable<IPage>>();
-            var dialogs = Container.Resolve<IEnumerable<IDialog>>();
-            var components = Container.Resolve<IEnumerable<IComponent>>();
+            var controlsFactory = AppContainer.Resolve<IControlsFactory>();
+            var modules = AppContainer.Resolve<IEnumerable<IModule>>();
+            var pages = AppContainer.Resolve<IEnumerable<IPage>>();
+            var dialogs = AppContainer.Resolve<IEnumerable<IDialog>>();
+            var components = AppContainer.Resolve<IEnumerable<IComponent>>();
 
 
             controlsFactory.RegisterModules(modules.ToList());

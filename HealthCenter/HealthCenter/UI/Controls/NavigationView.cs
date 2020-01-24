@@ -12,8 +12,9 @@ using HealthCenter.Events;
 
 namespace HealthCenter.UI.Controls
 {
-    public partial class NavigationView : UserControl , IPage
+    public partial class NavigationView : UserControl, IPage
     {
+        public AccountType AccountType { get; set; }
         private IControlsFactory ControlsFactory { get; }
         public IAccountContextService AccountContextService { get; }
         public IHealthCenterService HealthCenterService { get; }
@@ -24,10 +25,12 @@ namespace HealthCenter.UI.Controls
             IHealthCenterService healthCenterService)
         {
             InitializeComponent();
+
             ControlsFactory = controlsFactory;
             AccountContextService = accountContextService;
             HealthCenterService = healthCenterService;
             var records = ControlsFactory.Resolve<RecordsView>();
+            records.AccountType = AccountType;
             OnUserControlChanged += NavigationView_OnUserControlChanged;
         }
 
