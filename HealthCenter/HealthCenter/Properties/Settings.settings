@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="HealthCenter.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Constring" Type="System.String" Scope="User">
+      <Value Profile="(Default)">server=localhost;database=healthcenter_db;username=root;password=admin;sslmode=none;port=3306;AllowPublicKeyRetrieval=true;</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
