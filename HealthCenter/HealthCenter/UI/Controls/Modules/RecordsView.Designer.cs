@@ -42,9 +42,6 @@
             this.searchTxt = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dtgvPerson = new System.Windows.Forms.DataGridView();
-            this.View = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.EditBtn = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.GenerateReportBtn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dtgvConsultations = new System.Windows.Forms.DataGridView();
@@ -53,6 +50,9 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
+            this.View = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.EditBtn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.GenerateReportBtn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -196,37 +196,6 @@
             this.dtgvPerson.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dtgvPerson.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             // 
-            // View
-            // 
-            this.View.Frozen = true;
-            this.View.HeaderText = "";
-            this.View.Name = "View";
-            this.View.ReadOnly = true;
-            this.View.Text = "View details";
-            this.View.UseColumnTextForButtonValue = true;
-            this.View.Width = 5;
-            // 
-            // EditBtn
-            // 
-            this.EditBtn.Frozen = true;
-            this.EditBtn.HeaderText = "";
-            this.EditBtn.MinimumWidth = 60;
-            this.EditBtn.Name = "EditBtn";
-            this.EditBtn.ReadOnly = true;
-            this.EditBtn.Text = "Edit";
-            this.EditBtn.UseColumnTextForButtonValue = true;
-            this.EditBtn.Width = 60;
-            // 
-            // GenerateReportBtn
-            // 
-            this.GenerateReportBtn.Frozen = true;
-            this.GenerateReportBtn.HeaderText = "";
-            this.GenerateReportBtn.Name = "GenerateReportBtn";
-            this.GenerateReportBtn.ReadOnly = true;
-            this.GenerateReportBtn.Text = "Generate consultation report";
-            this.GenerateReportBtn.UseColumnTextForButtonValue = true;
-            this.GenerateReportBtn.Width = 5;
-            // 
             // tabControl1
             // 
             this.tableLayoutPanel2.SetColumnSpan(this.tabControl1, 2);
@@ -336,6 +305,37 @@
             this.propertyGrid1.ToolbarVisible = false;
             this.propertyGrid1.ViewBorderColor = System.Drawing.Color.White;
             // 
+            // View
+            // 
+            this.View.Frozen = true;
+            this.View.HeaderText = "";
+            this.View.Name = "View";
+            this.View.ReadOnly = true;
+            this.View.Text = "View details";
+            this.View.UseColumnTextForButtonValue = true;
+            this.View.Width = 5;
+            // 
+            // EditBtn
+            // 
+            this.EditBtn.Frozen = true;
+            this.EditBtn.HeaderText = "";
+            this.EditBtn.MinimumWidth = 60;
+            this.EditBtn.Name = "EditBtn";
+            this.EditBtn.ReadOnly = true;
+            this.EditBtn.Text = "Edit";
+            this.EditBtn.UseColumnTextForButtonValue = true;
+            this.EditBtn.Width = 60;
+            // 
+            // GenerateReportBtn
+            // 
+            this.GenerateReportBtn.Frozen = true;
+            this.GenerateReportBtn.HeaderText = "";
+            this.GenerateReportBtn.Name = "GenerateReportBtn";
+            this.GenerateReportBtn.ReadOnly = true;
+            this.GenerateReportBtn.Text = "Download Report";
+            this.GenerateReportBtn.UseColumnTextForButtonValue = true;
+            this.GenerateReportBtn.Width = 5;
+            // 
             // RecordsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -382,9 +382,9 @@
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PropertyGrid propertyGrid1;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewButtonColumn View;
         private System.Windows.Forms.DataGridViewButtonColumn EditBtn;
         private System.Windows.Forms.DataGridViewButtonColumn GenerateReportBtn;
-        private System.Windows.Forms.Button button1;
     }
 }

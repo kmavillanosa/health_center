@@ -35,18 +35,21 @@ namespace HealthCenter.UI.Controls
 
         }
 
+        /// <summary>
+        /// For testing purposes
+        /// </summary>
         private void StartInject()
         {
             
-            txt_UserName.Text = "myraxys";
-           /// txt_UserName.Text = "kmavillanosa";
+           // txt_UserName.Text = "myraxys";
+            txt_UserName.Text = "kmavillanosa";
             Txt_Password.Text = "zxczxc";
             Login();
 
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-           // StartInject();
+            StartInject();
         }
 
 
