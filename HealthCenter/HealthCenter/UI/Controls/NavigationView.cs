@@ -34,6 +34,8 @@ namespace HealthCenter.UI.Controls
             AccessTypeHandler = accessTypeHandler;
             var records = ControlsFactory.Resolve<RecordsView>();
             OnUserControlChanged += NavigationView_OnUserControlChanged;
+
+
         }
 
         private void NavigationView_OnUserControlChanged(object sender, ControlChangedEventArgs<UserControl> e)
@@ -41,6 +43,7 @@ namespace HealthCenter.UI.Controls
             ModulePanel.Controls.Clear();
             e.CurrentControl.Dock = DockStyle.Fill;
             ModulePanel.Controls.Add(e.CurrentControl);
+
 
             if (AccessTypeHandler.Type != AccountType.Administrator)
             {
@@ -53,6 +56,7 @@ namespace HealthCenter.UI.Controls
 
         public void OnControlChanged(UserControl control)
         {
+
             OnUserControlChanged?.Invoke(this, new ControlChangedEventArgs<UserControl> { CurrentControl = control });
         }
 

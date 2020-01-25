@@ -20,10 +20,12 @@ namespace HealthCenter.UI.Controls.Modules
         BindingSource EventLogBinding = new BindingSource();
         List<PersonEvents> EventList { get; set; } = new List<PersonEvents>();
         public EventsFullView(IHealthCenterService healthCenterService,
+            IAccessTypeHandler accessTypeHandler,
             IControlsFactory controlsFactory)
         {
             InitializeComponent();
             HealthCenterService = healthCenterService;
+            AccessTypeHandler = accessTypeHandler;
             ControlsFactory = controlsFactory;
             Load += EventsFullView_Load;
         }
@@ -31,9 +33,16 @@ namespace HealthCenter.UI.Controls.Modules
         private void EventsFullView_Load(object sender, EventArgs e)
         {
             LoadDetails();
+
+            if (AccessTypeHandler.Type == AccountType.Guest)
+            {
+                toolStripButton1.Enabled = false;
+            }
+
         }
         public PersonEvents CurrentEvent { get; set; }
         public IHealthCenterService HealthCenterService { get; }
+        public IAccessTypeHandler AccessTypeHandler { get; }
         public IControlsFactory ControlsFactory { get; }
 
         private void LoadEventParticipantChart()

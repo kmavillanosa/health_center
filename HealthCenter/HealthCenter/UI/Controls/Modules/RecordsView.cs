@@ -20,19 +20,22 @@ namespace HealthCenter.UI.Controls.Modules
 
         public event EventHandler<CollectionLoadedEventArgs<IEnumerable<Person>>> OnPersonCollectionLoaded;
         public IHealthCenterService HealthCenterService { get; }
+        public IAccessTypeHandler AccessTypeHandler { get; }
         public IControlsFactory ControlsFactory { get; }
 
-        public RecordsView(IHealthCenterService healthCenterService, IControlsFactory controlsFactory)
+        public RecordsView(IHealthCenterService healthCenterService,
+            IAccessTypeHandler accessTypeHandler,
+            IControlsFactory controlsFactory)
         {
             InitializeComponent();
             HealthCenterService = healthCenterService;
+            AccessTypeHandler = accessTypeHandler;
             ControlsFactory = controlsFactory;
             OnPersonCollectionLoaded += RecordsView_OnPersonCollectionLoaded;
         }
 
         private async void LoadData()
         {
-
             var data = await HealthCenterService.GetPeopleList();
             OnPersonCollectionLoaded(this, new CollectionLoadedEventArgs<IEnumerable<Person>> { Data = data });
         }
@@ -42,6 +45,28 @@ namespace HealthCenter.UI.Controls.Modules
             PersonListBinding.DataSource = e.Data;
             PersonList = e.Data.ToList();
             dtgvPerson.DataSource = PersonListBinding;
+
+            if(AccessTypeHandler.Type == AccountType.Guest)
+            {
+                button1.Enabled = false;
+                CreateBtn.Enabled = false;
+                toolStripButton1.Enabled = false;
+
+
+                dtgvPerson.Columns[1].Visible = false;
+                dtgvPerson.Columns[2].Visible = false;
+                dtgvConsultations.Columns[0].Visible = false;
+
+
+
+                  //.Where(dtgv => dtgv.Tag.ToString() == "GridForRestriction");
+                  //.Select(dtg => dtg.Columns).ToList()
+                  //      .ForEach(col => col.OfType<DataGridViewButtonColumn>()
+                  //      .ToList()
+                  //      .ForEach(cc => { cc.Visible = false; }));
+
+
+            }
         }
 
         private void RecordsView_Load(object sender, EventArgs e)

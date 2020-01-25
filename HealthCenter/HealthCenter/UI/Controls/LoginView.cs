@@ -37,7 +37,9 @@ namespace HealthCenter.UI.Controls
 
         private void StartInject()
         {
-            txt_UserName.Text = "kmavillanosa";
+            
+            txt_UserName.Text = "myraxys";
+           // txt_UserName.Text = "kmavillanosa";
             Txt_Password.Text = "zxczxc";
             Login();
 
@@ -83,7 +85,6 @@ namespace HealthCenter.UI.Controls
                         dd.AccountType = data.Type;
                         dd.Dock = DockStyle.Fill;
 
-                        
                         ControlsFactory.ShellView.Controls.Add(dd);
                     }
                 }

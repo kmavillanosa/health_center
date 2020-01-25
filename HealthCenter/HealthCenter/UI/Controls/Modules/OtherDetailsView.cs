@@ -15,15 +15,18 @@ namespace HealthCenter.UI.Controls.Modules
         public AccountType AccountType { get; set; }
 
         public OtherDetailsView(IHealthCenterService healthCenterService,
+            IAccessTypeHandler accessTypeHandler,
             IControlsFactory controlsFactory)
         {
             InitializeComponent();
             HealthCenterService = healthCenterService;
+            AccessTypeHandler = accessTypeHandler;
             ControlsFactory = controlsFactory;
             GatherDetails();
         }
 
         public IHealthCenterService HealthCenterService { get; }
+        public IAccessTypeHandler AccessTypeHandler { get; }
         public IControlsFactory ControlsFactory { get; }
         BindingSource AilmentListBinding { get; set; } = new BindingSource();
         BindingSource CategoryListBinding { get; set; } = new BindingSource();
@@ -37,6 +40,15 @@ namespace HealthCenter.UI.Controls.Modules
             CategoryListBinding.DataSource = category.ToList();
             dtgvCategory.DataSource = CategoryListBinding;
             dtgvailment.DataSource = AilmentListBinding;
+
+
+            if (AccessTypeHandler.Type == AccountType.Guest)
+            {
+                toolStripButton1.Enabled = false;
+                toolStripButton2.Enabled = false;
+            }
+
+
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
