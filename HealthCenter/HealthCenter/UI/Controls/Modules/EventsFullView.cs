@@ -132,6 +132,10 @@ namespace HealthCenter.UI.Controls.Modules
                 ExcelReports.GenerateEventParticipants(EventList);
             };
 
+            control.ExportSingleAction = (ev) =>
+            {
+                ExcelReports.GemerateParticipantEvent(ev);
+            };
 
             control.ViewAction = (obj) =>
             {
@@ -139,6 +143,7 @@ namespace HealthCenter.UI.Controls.Modules
                 EventLogBinding.DataSource = obj.Logs.ToList();
                 dtgvPersonevents.DataSource = EventLogBinding;
             };
+
 
             control.CreateAction = () =>
             {

@@ -180,3 +180,5 @@ D:\github\health_center\HealthCenter\HealthCenter\obj\Debug\HealthCenter.csproj.
 D:\github\health_center\HealthCenter\HealthCenter\obj\Debug\HealthCenter.csproj.CopyComplete
 D:\github\health_center\HealthCenter\HealthCenter\obj\Debug\HealthCenter.exe
 D:\github\health_center\HealthCenter\HealthCenter\obj\Debug\HealthCenter.pdb
+D:\GitHub\health_center\HealthCenter\HealthCenter\obj\Debug\HealthCenter.csproj.CoreCompileInputs.cache
+D:\GitHub\health_center\HealthCenter\HealthCenter\obj\Debug\HealthCenter.UI.Controls.Dialogs.ForgotPassword.resources

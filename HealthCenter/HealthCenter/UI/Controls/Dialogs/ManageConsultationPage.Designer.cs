@@ -52,7 +52,7 @@
             // 
             this.ailmentCb.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ailmentCb.FormattingEnabled = true;
-            this.ailmentCb.Location = new System.Drawing.Point(113, 121);
+            this.ailmentCb.Location = new System.Drawing.Point(90, 121);
             this.ailmentCb.Name = "ailmentCb";
             this.ailmentCb.Size = new System.Drawing.Size(309, 21);
             this.ailmentCb.TabIndex = 0;
@@ -62,7 +62,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(58, 124);
+            this.label1.Location = new System.Drawing.Point(35, 124);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 3;
@@ -73,7 +73,7 @@
             this.DiagnosisTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DiagnosisTxt.BackColor = System.Drawing.Color.WhiteSmoke;
             this.DiagnosisTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DiagnosisTxt.Location = new System.Drawing.Point(113, 238);
+            this.DiagnosisTxt.Location = new System.Drawing.Point(90, 238);
             this.DiagnosisTxt.Name = "DiagnosisTxt";
             this.DiagnosisTxt.Size = new System.Drawing.Size(309, 96);
             this.DiagnosisTxt.TabIndex = 1;
@@ -84,7 +84,7 @@
             this.RemarksTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.RemarksTxt.BackColor = System.Drawing.Color.WhiteSmoke;
             this.RemarksTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.RemarksTxt.Location = new System.Drawing.Point(113, 340);
+            this.RemarksTxt.Location = new System.Drawing.Point(90, 340);
             this.RemarksTxt.Name = "RemarksTxt";
             this.RemarksTxt.Size = new System.Drawing.Size(309, 96);
             this.RemarksTxt.TabIndex = 2;
@@ -95,7 +95,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(47, 238);
+            this.label2.Location = new System.Drawing.Point(24, 238);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 4;
@@ -106,7 +106,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(53, 340);
+            this.label3.Location = new System.Drawing.Point(30, 340);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 5;
@@ -117,7 +117,7 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(84, 199);
+            this.label7.Location = new System.Drawing.Point(61, 199);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(23, 13);
             this.label7.TabIndex = 23;
@@ -128,7 +128,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(234, 164);
+            this.label6.Location = new System.Drawing.Point(211, 164);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(71, 13);
             this.label6.TabIndex = 22;
@@ -139,7 +139,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(58, 164);
+            this.label5.Location = new System.Drawing.Point(35, 164);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 13);
             this.label5.TabIndex = 21;
@@ -148,7 +148,7 @@
             // BpTxt
             // 
             this.BpTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BpTxt.Location = new System.Drawing.Point(113, 196);
+            this.BpTxt.Location = new System.Drawing.Point(90, 196);
             this.BpTxt.Name = "BpTxt";
             this.BpTxt.Size = new System.Drawing.Size(110, 20);
             this.BpTxt.TabIndex = 20;
@@ -156,7 +156,7 @@
             // WeightTxt
             // 
             this.WeightTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.WeightTxt.Location = new System.Drawing.Point(311, 161);
+            this.WeightTxt.Location = new System.Drawing.Point(288, 161);
             this.WeightTxt.Name = "WeightTxt";
             this.WeightTxt.Size = new System.Drawing.Size(111, 20);
             this.WeightTxt.TabIndex = 19;
@@ -164,7 +164,7 @@
             // HeightTxt
             // 
             this.HeightTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.HeightTxt.Location = new System.Drawing.Point(113, 161);
+            this.HeightTxt.Location = new System.Drawing.Point(90, 161);
             this.HeightTxt.Name = "HeightTxt";
             this.HeightTxt.Size = new System.Drawing.Size(110, 20);
             this.HeightTxt.TabIndex = 18;
@@ -176,7 +176,7 @@
             this.groupBox1.Controls.Add(this.cbgender);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.dueDateDtp);
-            this.groupBox1.Location = new System.Drawing.Point(113, 467);
+            this.groupBox1.Location = new System.Drawing.Point(90, 467);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(309, 100);
             this.groupBox1.TabIndex = 24;
@@ -240,7 +240,7 @@
             this.Controls.Add(this.DiagnosisTxt);
             this.Controls.Add(this.ailmentCb);
             this.Name = "ManageConsultationPage";
-            this.Size = new System.Drawing.Size(510, 711);
+            this.Size = new System.Drawing.Size(464, 711);
             this.Load += new System.EventHandler(this.ManageConsultationPage_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

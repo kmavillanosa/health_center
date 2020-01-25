@@ -26,6 +26,7 @@ namespace HealthCenter
         public Action<PersonEvents> ViewAction { get; set; }
         public Action CreateAction { get; set; }
         public Action ExportAction { get; set; }
+        public Action<PersonEvents> ExportSingleAction { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -97,6 +98,14 @@ namespace HealthCenter
             var btn = (Border)sender;
             var data = (PersonEvents)btn.Tag;
             UpdateAction?.Invoke(data);
+        }
+
+        private void ExportBtn_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            var btn = (Border)sender;
+            var data = (PersonEvents)btn.Tag;
+            ExportSingleAction?.Invoke(data);
+            
         }
     }
 }

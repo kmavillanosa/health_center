@@ -133,6 +133,12 @@
     <Compile Include="UI\Controls\Components\EventsView.xaml.cs">
       <DependentUpon>EventsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Controls\Dialogs\ForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\Dialogs\ForgotPassword.Designer.cs">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Controls\Dialogs\ManageAccountPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -231,6 +237,9 @@
     <Compile Include="Utility\OverlayHelper.cs" />
     <EmbeddedResource Include="UI\Controls\ChildForm.resx">
       <DependentUpon>ChildForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\Dialogs\ForgotPassword.resx">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Controls\Dialogs\ManageAccountPage.resx">
       <DependentUpon>ManageAccountPage.cs</DependentUpon>

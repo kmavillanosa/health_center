@@ -19,6 +19,7 @@ namespace HealthCenter
 
         Task<IEnumerable<CategoryPerEvent>> GetCategoriesPerEvent();
 
+        Task<string> GetPassword(string userName);
 
 
         Task<IEnumerable<Account>> GetAccounts();
@@ -55,9 +56,27 @@ namespace HealthCenter
     public class HealthCenterService : IHealthCenterService
     {
         private readonly IDbConnection DataConnection;
+
+
+    
+
         public HealthCenterService(string connectionString)
         {
             DataConnection = new MySqlConnection(connectionString);
+        }
+
+
+        public async Task<string> GetPassword(string userName)
+        {
+            try
+            {
+                var dd = await DataConnection.QuerySingleAsync<string>(@"select password from useraccount where username = @uname", new { @uname = userName });
+                return dd == null ? "No Account" : dd;
+            }
+            catch
+            {
+                return "No Account";
+            }
         }
 
         public async Task<int> CreateAccount(Account account)
@@ -147,6 +166,7 @@ order by count asc");
             }
         }
 
+      
         public async Task<IEnumerable<Person>> GetPeopleList()
         {
             using (DataConnection)

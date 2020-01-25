@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using HealthCenter.UI.Controls;
+using HealthCenter.UI.Controls.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,6 +27,9 @@ namespace HealthCenter
         public void InitializeDependencies()
         {
             var builder = new ContainerBuilder();
+
+
+
 
             builder.RegisterType<AccessTypeHandler>()
                 .As<IAccessTypeHandler>()

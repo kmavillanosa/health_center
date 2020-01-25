@@ -69,8 +69,19 @@ namespace HealthCenter
         public PersonGender Gender { get; set; } = PersonGender.NotDefined;
         public string CivilPartnerName { get; set; }
 
-        [DisplayName("Date of birth")]
+        [DisplayName("Date of birth"), Browsable(false)]
         public DateTime? BirthDate { get; set; }
+
+        //[DisplayName("Birthday")]
+        //public int BirthDay
+        //{
+        //    get
+        //    {
+        //        int difference = DateTime.Now.Year - BirthDate.Value.Year;
+        //        return difference;
+
+        //    }
+        //}
 
         [Computed, Browsable(false)]
         public virtual PersonCategory Category { get; set; } = null;
@@ -81,10 +92,7 @@ namespace HealthCenter
         [Computed, Browsable(false)]
         public IEnumerable<EventConsultations> EventConsultations { get; set; }
 
-
-
         public string Address { get; set; } = null;
-
 
         [Browsable(false)]
         public string FirstName { get; set; } = null;

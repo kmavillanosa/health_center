@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HealthCenter.Events;
+using HealthCenter.UI.Controls.Dialogs;
 
 namespace HealthCenter.UI.Controls
 {
@@ -49,7 +50,7 @@ namespace HealthCenter.UI.Controls
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            StartInject();
+            //StartInject();
         }
 
 
@@ -150,7 +151,8 @@ namespace HealthCenter.UI.Controls
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            var cf = ControlsFactory.Resolve<ForgotPassword>();
+            cf.ShowDialog();
         }
 
         private void txt_UserName_KeyDown(object sender, KeyEventArgs e)
