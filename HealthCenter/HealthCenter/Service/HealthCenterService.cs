@@ -160,12 +160,35 @@ order by count asc");
                         .QueryAsync<Consultation>("SELECT * FROM medical_consultation where personId = @personId",
                         new { @personId = item.Id });
 
+                    item.EventConsultations = await DataConnection
+                        .QueryAsync<EventConsultations>(@"SELECT 
+    e.`title` as `Event`,
+    ail.`name` as `Ailment`,
+    mc.BloodPressure,
+    mc.Weight,
+    mc.Height,
+    mc.ExpectedChildGender,
+    mc.PregnancyDueDate,
+    mc.Diagnosis,
+    mc.Remarks,
+    mc.LastModified AS `ConsultationDate`
+FROM
+    person p
+        LEFT JOIN
+    eventlogs el ON p.`id` = el.personId
+        LEFT JOIN
+    `events` e ON e.id = el.`Event`
+        LEFT JOIN
+    medical_consultation mc ON mc.id = el.consultationId
+        LEFT JOIN
+    `ailments` ail ON ail.id = mc.AilmentGroupId
+    where p.id = @pId", new { @pId = item.Id});
+
+
                     foreach (var consultation in item.Consultations)
                     {
                         consultation.Ailment = await DataConnection.GetAsync<Ailments>(consultation.AilmentGroupId);
                     }
-
-
                 }
                 return people;
             }

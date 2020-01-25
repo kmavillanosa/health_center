@@ -12,9 +12,9 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <StackPanel Background="DimGray" Orientation="Horizontal">
-            <Button Name="AddBtn" Click="AddBtn_Click" Margin="3" Padding="8" Grid.Row="0" Content="New event"/>
-            <Button Name="ExportReportBtn" Margin="3" Padding="8" Click="ExportReportBtn_Click" Grid.Row="0" Content="Export Report"/>
-            <Button Margin="3" Padding="8" Click="Button_Click" Grid.Row="0" Content="Refresh"/>
+            <Button Name="AddBtn" Click="AddBtn_Click" Margin="3" Padding="8" Grid.Row="0" Content="Create New Event"/>
+            <Button Name="ExportReportBtn" Margin="3" Padding="8" Click="ExportReportBtn_Click" Grid.Row="0" Content="Download Report"/>
+            <Button Margin="3" Padding="8" Click="Button_Click" Grid.Row="0" Content="Reload"/>
         </StackPanel>
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
             <ItemsControl Name="EventItemsGrid" ItemsSource="{Binding Events}">

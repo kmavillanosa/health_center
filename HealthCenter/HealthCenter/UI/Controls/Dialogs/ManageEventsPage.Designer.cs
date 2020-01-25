@@ -73,6 +73,7 @@
             this.TitleTxt.BackColor = System.Drawing.Color.WhiteSmoke;
             this.TitleTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TitleTxt.Location = new System.Drawing.Point(103, 57);
+            this.TitleTxt.MaxLength = 31;
             this.TitleTxt.Name = "TitleTxt";
             this.TitleTxt.Size = new System.Drawing.Size(309, 96);
             this.TitleTxt.TabIndex = 6;

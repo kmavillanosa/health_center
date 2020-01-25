@@ -32,9 +32,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecordsView));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.CreateBtn = new System.Windows.Forms.Button();
             this.RefreshBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -53,6 +54,8 @@
             this.View = new System.Windows.Forms.DataGridViewButtonColumn();
             this.EditBtn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.GenerateReportBtn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.eventConsultationsDtgv = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -63,6 +66,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvConsultations)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.eventConsultationsDtgv)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -85,7 +90,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.CreateBtn);
             this.panel1.Controls.Add(this.RefreshBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -93,15 +97,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(793, 68);
             this.panel1.TabIndex = 4;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(183, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(257, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Generate Consultation Report";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // CreateBtn
             // 
@@ -200,6 +195,7 @@
             // 
             this.tableLayoutPanel2.SetColumnSpan(this.tabControl1, 2);
             this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(3, 381);
             this.tabControl1.Name = "tabControl1";
@@ -336,6 +332,47 @@
             this.GenerateReportBtn.UseColumnTextForButtonValue = true;
             this.GenerateReportBtn.Width = 5;
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.eventConsultationsDtgv);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1203, 346);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Event Consultations";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // eventConsultationsDtgv
+            // 
+            this.eventConsultationsDtgv.AllowUserToAddRows = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.eventConsultationsDtgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.eventConsultationsDtgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.eventConsultationsDtgv.BackgroundColor = System.Drawing.Color.White;
+            this.eventConsultationsDtgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.eventConsultationsDtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.eventConsultationsDtgv.DefaultCellStyle = dataGridViewCellStyle5;
+            this.eventConsultationsDtgv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.eventConsultationsDtgv.Location = new System.Drawing.Point(3, 3);
+            this.eventConsultationsDtgv.MultiSelect = false;
+            this.eventConsultationsDtgv.Name = "eventConsultationsDtgv";
+            this.eventConsultationsDtgv.RowHeadersVisible = false;
+            this.eventConsultationsDtgv.RowTemplate.Height = 40;
+            this.eventConsultationsDtgv.RowTemplate.ReadOnly = true;
+            this.eventConsultationsDtgv.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.eventConsultationsDtgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.eventConsultationsDtgv.Size = new System.Drawing.Size(1197, 340);
+            this.eventConsultationsDtgv.TabIndex = 5;
+            this.eventConsultationsDtgv.Tag = "GridForRestriction";
+            // 
             // RecordsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -359,6 +396,8 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.eventConsultationsDtgv)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -382,9 +421,10 @@
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PropertyGrid propertyGrid1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewButtonColumn View;
         private System.Windows.Forms.DataGridViewButtonColumn EditBtn;
         private System.Windows.Forms.DataGridViewButtonColumn GenerateReportBtn;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView eventConsultationsDtgv;
     }
 }

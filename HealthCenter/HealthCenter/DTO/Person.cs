@@ -65,6 +65,11 @@ namespace HealthCenter
         [Computed, Browsable(false)]
         public IEnumerable<Consultation> Consultations { get; set; }
 
+        [Computed, Browsable(false)]
+        public IEnumerable<EventConsultations> EventConsultations { get; set; }
+
+
+
         public string Address { get; set; } = null;
 
 

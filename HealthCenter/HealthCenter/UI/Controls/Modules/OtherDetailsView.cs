@@ -120,20 +120,7 @@ namespace HealthCenter.UI.Controls.Modules
 
         private void OtherDetailsView_Load(object sender, EventArgs e)
         {
-            if (AccessTypeHandler.Type == AccountType.Guest)
-            {
-                toolStripButton1.Enabled = false;
-                toolStripButton2.Enabled = false;
-                dtgvailment.Columns[0].Visible = false;
-                dtgvCategory.Columns[0].Visible = false;
-            }
-            else
-            {
-                toolStripButton1.Enabled = true;
-                toolStripButton2.Enabled = true;
-                dtgvailment.Columns[0].Visible = true;
-                dtgvCategory.Columns[0].Visible = true;
-            }
+
         }
 
         private void OtherDetailsView_ParentChanged(object sender, EventArgs e)
@@ -157,6 +144,11 @@ namespace HealthCenter.UI.Controls.Modules
                 dtgvailment.Columns[0].Visible = true;
                 dtgvCategory.Columns[0].Visible = true;
             }
+        }
+
+        private void j(object sender, EventArgs e)
+        {
+
         }
     }
 }

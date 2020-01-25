@@ -15,6 +15,7 @@ namespace HealthCenter.UI.Controls.Modules
         public AccountType AccountType { get; set; }
         
         private BindingSource PersonListBinding = new BindingSource();
+        private BindingSource EventConsultationListBinding = new BindingSource();
         private BindingSource ConsultationListBinding = new BindingSource();
         List<Person> PersonList = new List<Person>();
 
@@ -48,7 +49,6 @@ namespace HealthCenter.UI.Controls.Modules
 
             if(AccessTypeHandler.Type == AccountType.Guest)
             {
-                button1.Enabled = false;
                 CreateBtn.Enabled = false;
                 toolStripButton1.Enabled = false;
 
@@ -58,7 +58,6 @@ namespace HealthCenter.UI.Controls.Modules
             }
             else
             {
-                button1.Enabled = true;
                 CreateBtn.Enabled = true;
                 toolStripButton1.Enabled = true;
 
@@ -124,8 +123,10 @@ namespace HealthCenter.UI.Controls.Modules
             switch (e.ColumnIndex)
             {
                 case 0:
+                    EventConsultationListBinding.DataSource = data.EventConsultations.ToList();
                     ConsultationListBinding.DataSource = data.Consultations.ToList();
                     dtgvConsultations.DataSource = ConsultationListBinding;
+                    eventConsultationsDtgv.DataSource = EventConsultationListBinding;
                     propertyGrid1.SelectedObject = data;
 
                     break;
@@ -199,7 +200,6 @@ namespace HealthCenter.UI.Controls.Modules
         {
             if (AccessTypeHandler.Type == AccountType.Guest)
             {
-                button1.Enabled = false;
                 CreateBtn.Enabled = false;
                 toolStripButton1.Enabled = false;
 
@@ -209,7 +209,6 @@ namespace HealthCenter.UI.Controls.Modules
             }
             else
             {
-                button1.Enabled = true;
                 CreateBtn.Enabled = true;
                 toolStripButton1.Enabled = true;
 

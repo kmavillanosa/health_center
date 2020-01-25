@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OtherDetailsView));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dtgvailment = new System.Windows.Forms.DataGridView();
@@ -81,8 +81,8 @@
             // dtgvailment
             // 
             this.dtgvailment.AllowUserToAddRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.dtgvailment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.dtgvailment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dtgvailment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dtgvailment.BackgroundColor = System.Drawing.Color.White;
             this.dtgvailment.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -165,8 +165,8 @@
             // dtgvCategory
             // 
             this.dtgvCategory.AllowUserToAddRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.dtgvCategory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.dtgvCategory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dtgvCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dtgvCategory.BackgroundColor = System.Drawing.Color.White;
             this.dtgvCategory.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -241,7 +241,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "OtherDetailsView";
             this.Size = new System.Drawing.Size(1195, 749);
-            this.Load += new System.EventHandler(this.OtherDetailsView_Load);
+            this.Load += new System.EventHandler(this.j);
             this.ParentChanged += new System.EventHandler(this.OtherDetailsView_ParentChanged);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

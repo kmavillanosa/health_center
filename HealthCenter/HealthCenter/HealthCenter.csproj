@@ -108,6 +108,7 @@
     <Compile Include="DTO\CategoryPerEvent.cs" />
     <Compile Include="DTO\Consultation.cs" />
     <Compile Include="DTO\EntityBase.cs" />
+    <Compile Include="DTO\EventConsultations.cs" />
     <Compile Include="DTO\Events.cs" />
     <Compile Include="DTO\IEntity.cs" />
     <Compile Include="DTO\Login.cs" />
