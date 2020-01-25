@@ -58,9 +58,11 @@ namespace HealthCenter.UI.Controls
 
         public void OnControlChanged(UserControl control)
         {
-         
             OnUserControlChanged?.Invoke(this, new ControlChangedEventArgs<UserControl> { CurrentControl = control });
         }
+
+
+  
 
 
         public void GotoRecords()
@@ -130,6 +132,18 @@ namespace HealthCenter.UI.Controls
         private void button3_Click(object sender, EventArgs e)
         {
             GotoAccounts();
+        }
+
+        public void ReValidate()
+        {
+            var EventsFullView = ControlsFactory.Resolve<EventsFullView>();
+            var RecordsView = ControlsFactory.Resolve<RecordsView>();
+            var AccountsView = ControlsFactory.Resolve<AccountsView>();
+            var OtherDetailsView = ControlsFactory.Resolve<OtherDetailsView>();
+            EventsFullView.Revalidate();
+            RecordsView.Revalidate();
+            AccountsView.Revalidate();
+            AccountsView.Revalidate();
         }
     }
 }

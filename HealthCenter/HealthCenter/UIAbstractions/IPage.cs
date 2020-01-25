@@ -8,6 +8,6 @@ namespace HealthCenter
 {
     public interface IPage : IUIComponent
     {
-
+        void ReValidate();
     }
 }

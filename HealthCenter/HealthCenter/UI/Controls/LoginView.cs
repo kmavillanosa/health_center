@@ -67,6 +67,7 @@ namespace HealthCenter.UI.Controls
 
         private async void Login()
         {
+
             var data = await HealthCenterService.Login(txt_UserName.Text, Txt_Password.Text);
             if (data != null)
             {
@@ -78,26 +79,24 @@ namespace HealthCenter.UI.Controls
                     
 
                     ControlsFactory.ShellView.Controls.Clear();
-                    var dd = ControlsFactory.Resolve<NavigationView>();
+                    var nav = ControlsFactory.Resolve<NavigationView>();
 
-                    if(data.Type != AccountType.None)
-                    {
-                        AccessTypeHandler.SetType(data.Type);
-                    }
+                    AccessTypeHandler.SetType(data.Type);
+                    nav.ReValidate();
 
                     if (data.Type != AccountType.Administrator)
                     {
-                        dd.button3.Visible = false;
+                        nav.button3.Visible = false;
                     }
                     else
                     {
-                        dd.button3.Visible = true;
-                        dd.button3.Enabled = true;
+                        nav.button3.Visible = true;
+                        nav.button3.Enabled = true;
                     }
 
-                    dd.AccountType = data.Type;
-                    dd.Dock = DockStyle.Fill;
-                    ControlsFactory.ShellView.Controls.Add(dd);
+                    nav.AccountType = data.Type;
+                    nav.Dock = DockStyle.Fill;
+                    ControlsFactory.ShellView.Controls.Add(nav);
                 }
                 else
                 {
@@ -167,6 +166,11 @@ namespace HealthCenter.UI.Controls
                 Login();
 
             }
+        }
+
+        public void ReValidate()
+        {
+
         }
     }
 }
