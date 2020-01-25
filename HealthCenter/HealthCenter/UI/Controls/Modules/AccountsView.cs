@@ -16,15 +16,17 @@ namespace HealthCenter.UI.Controls.Modules
 
         public IHealthCenterService HealthCenterService { get; }
         public IControlsFactory ControlsFactory { get; }
+        public IAccessTypeHandler AccessTypeHandler { get; }
         private BindingSource AccountListBinding { get; set; } = new BindingSource();
         private BindingSource AccountLogsListBinding { get; set; } = new BindingSource();
         private event EventHandler<CollectionLoadedEventArgs<List<Account>>> OnAccountsCollectionLoaded;
-        public AccountsView(IHealthCenterService healthCenterService, IControlsFactory controlsFactory)
+        public AccountsView(IHealthCenterService healthCenterService, IControlsFactory controlsFactory, IAccessTypeHandler accessTypeHandler)
         {
             InitializeComponent();
             OnAccountsCollectionLoaded += AccountsView_OnAccountsCollectionLoaded;
             HealthCenterService = healthCenterService;
             ControlsFactory = controlsFactory;
+            AccessTypeHandler = accessTypeHandler;
             InitializeData();
         }
 
@@ -32,12 +34,14 @@ namespace HealthCenter.UI.Controls.Modules
         {
             var data = await HealthCenterService.GetAccounts();
             OnAccountsCollectionLoaded(this, new CollectionLoadedEventArgs<List<Account>>() { Data = data.ToList() });
+
         }
 
         private void AccountsView_OnAccountsCollectionLoaded(object sender, CollectionLoadedEventArgs<List<Account>> e)
         {
             AccountListBinding.DataSource = e.Data;
             dtgvAcc.DataSource = AccountListBinding;
+
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)

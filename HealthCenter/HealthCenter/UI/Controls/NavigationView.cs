@@ -14,23 +14,25 @@ namespace HealthCenter.UI.Controls
 {
     public partial class NavigationView : UserControl, IPage
     {
-        public AccountType AccountType { get; set; }
+        public AccountType AccountType { get; set; } = AccountType.None;
         private IControlsFactory ControlsFactory { get; }
         public IAccountContextService AccountContextService { get; }
         public IHealthCenterService HealthCenterService { get; }
+        public IAccessTypeHandler AccessTypeHandler { get; }
 
         public event EventHandler<ControlChangedEventArgs<UserControl>> OnUserControlChanged;
         public NavigationView(IControlsFactory controlsFactory,
             IAccountContextService accountContextService,
-            IHealthCenterService healthCenterService)
+            IHealthCenterService healthCenterService,
+            IAccessTypeHandler accessTypeHandler)
         {
             InitializeComponent();
 
             ControlsFactory = controlsFactory;
             AccountContextService = accountContextService;
             HealthCenterService = healthCenterService;
+            AccessTypeHandler = accessTypeHandler;
             var records = ControlsFactory.Resolve<RecordsView>();
-            records.AccountType = AccountType;
             OnUserControlChanged += NavigationView_OnUserControlChanged;
         }
 
@@ -38,8 +40,14 @@ namespace HealthCenter.UI.Controls
         {
             ModulePanel.Controls.Clear();
             e.CurrentControl.Dock = DockStyle.Fill;
-
             ModulePanel.Controls.Add(e.CurrentControl);
+
+            if (AccessTypeHandler.Type != AccountType.Administrator)
+            {
+                button3.Enabled = false;
+                button3.Text = "Account Restricted";
+                button3.Visible = false;
+            }
 
         }
 
@@ -47,7 +55,6 @@ namespace HealthCenter.UI.Controls
         {
             OnUserControlChanged?.Invoke(this, new ControlChangedEventArgs<UserControl> { CurrentControl = control });
         }
-
 
 
         public void GotoRecords()

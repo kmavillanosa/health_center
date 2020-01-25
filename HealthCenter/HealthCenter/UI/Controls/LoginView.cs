@@ -14,17 +14,39 @@ namespace HealthCenter.UI.Controls
     public partial class LoginView : UserControl , IPage
     {
         public event EventHandler<ControlChangedEventArgs<UserControl>> OnControlPageChanged;
+        public IHealthCenterService HealthCenterService { get; }
+        public IAccountContextService AccountContextService { get; }
+        public IControlsFactory ControlsFactory { get; }
+        public IAccessTypeHandler AccessTypeHandler { get; }
+        public MainForm MainForm { get; }
+
 
         public LoginView(IHealthCenterService healthCenterService, 
             IAccountContextService accountContextService,
-            IControlsFactory controlsFactory)
+            IControlsFactory controlsFactory,
+            IAccessTypeHandler accessTypeHandler)
         {
             InitializeComponent();
             HealthCenterService = healthCenterService;
             AccountContextService = accountContextService;
             ControlsFactory = controlsFactory;
+            AccessTypeHandler = accessTypeHandler;
             OnControlPageChanged += LoginView_OnControlPageChanged;
+
         }
+
+        private void StartInject()
+        {
+            txt_UserName.Text = "kmavillanosa";
+            Txt_Password.Text = "zxczxc";
+            Login();
+
+        }
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            StartInject();
+        }
+
 
         private void LoginView_OnControlPageChanged(object sender, ControlChangedEventArgs<UserControl> e)
         {
@@ -33,10 +55,7 @@ namespace HealthCenter.UI.Controls
             MainForm.Controls.Add(e.CurrentControl);
         }
 
-        public IHealthCenterService HealthCenterService { get; }
-        public IAccountContextService AccountContextService { get; }
-        public IControlsFactory ControlsFactory { get; }
-        public MainForm MainForm { get; }
+    
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
@@ -60,8 +79,11 @@ namespace HealthCenter.UI.Controls
 
                         ControlsFactory.ShellView.Controls.Clear();
                         var dd = ControlsFactory.Resolve<NavigationView>();
+                        AccessTypeHandler.SetType(data.Type);
                         dd.AccountType = data.Type;
                         dd.Dock = DockStyle.Fill;
+
+                        
                         ControlsFactory.ShellView.Controls.Add(dd);
                     }
                 }
@@ -111,5 +133,7 @@ namespace HealthCenter.UI.Controls
         {
             Environment.Exit(0);
         }
+
+      
     }
 }

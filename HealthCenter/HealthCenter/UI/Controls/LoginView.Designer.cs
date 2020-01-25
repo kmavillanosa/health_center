@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginView));
             this.LoginBtn = new System.Windows.Forms.Button();
             this.txt_UserName = new System.Windows.Forms.TextBox();
             this.Txt_Password = new System.Windows.Forms.TextBox();
@@ -37,13 +38,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // LoginBtn
             // 
             this.LoginBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LoginBtn.Location = new System.Drawing.Point(288, 333);
+            this.LoginBtn.Location = new System.Drawing.Point(287, 409);
             this.LoginBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.LoginBtn.Name = "LoginBtn";
             this.LoginBtn.Size = new System.Drawing.Size(112, 37);
@@ -55,7 +58,7 @@
             // txt_UserName
             // 
             this.txt_UserName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_UserName.Location = new System.Drawing.Point(58, 182);
+            this.txt_UserName.Location = new System.Drawing.Point(57, 258);
             this.txt_UserName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_UserName.MaxLength = 30;
             this.txt_UserName.Name = "txt_UserName";
@@ -65,7 +68,7 @@
             // Txt_Password
             // 
             this.Txt_Password.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Txt_Password.Location = new System.Drawing.Point(58, 259);
+            this.Txt_Password.Location = new System.Drawing.Point(57, 335);
             this.Txt_Password.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Txt_Password.MaxLength = 30;
             this.Txt_Password.Name = "Txt_Password";
@@ -77,10 +80,10 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(54, 32);
+            this.label1.Location = new System.Drawing.Point(183, 102);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(466, 115);
+            this.label1.Size = new System.Drawing.Size(336, 115);
             this.label1.TabIndex = 3;
             this.label1.Text = "PUERTO PRINCESA CITY HEALTH OFFICE\r\nNUTRITION DIVISION MONITORING\r\nAND RECORD SYS" +
     "TEM\r\nPPCHOND-MARS\r\n";
@@ -90,7 +93,7 @@
             // 
             this.seePwChk.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.seePwChk.AutoSize = true;
-            this.seePwChk.Location = new System.Drawing.Point(388, 298);
+            this.seePwChk.Location = new System.Drawing.Point(387, 374);
             this.seePwChk.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.seePwChk.Name = "seePwChk";
             this.seePwChk.Size = new System.Drawing.Size(125, 25);
@@ -104,7 +107,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(56, 156);
+            this.label2.Location = new System.Drawing.Point(55, 232);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 13);
@@ -116,7 +119,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(54, 233);
+            this.label3.Location = new System.Drawing.Point(53, 309);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 13);
@@ -126,7 +129,7 @@
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Location = new System.Drawing.Point(408, 333);
+            this.button1.Location = new System.Drawing.Point(407, 409);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 37);
@@ -139,6 +142,7 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label3);
@@ -148,10 +152,21 @@
             this.panel1.Controls.Add(this.seePwChk);
             this.panel1.Controls.Add(this.Txt_Password);
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(52, 26);
+            this.panel1.Location = new System.Drawing.Point(52, 91);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(563, 403);
+            this.panel1.Size = new System.Drawing.Size(563, 517);
             this.panel1.TabIndex = 7;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(58, 102);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(118, 107);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // LoginView
             // 
@@ -163,10 +178,11 @@
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "LoginView";
-            this.Size = new System.Drawing.Size(681, 460);
+            this.Size = new System.Drawing.Size(681, 663);
             this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.LoginView_PreviewKeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -182,5 +198,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

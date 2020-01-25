@@ -17,6 +17,7 @@ namespace HealthCenter
         public MainForm()
         {
             InitializeComponent();
+            this.Text = @"PUERTO PRINCESA CITY HEALTH OFFICE NUTRITION DIVISION MONITORING AND RECORD SYSTEM (PPCHOND-MARS)";
             OverlayHelper helper = new OverlayHelper(this);
         }
 
@@ -25,6 +26,8 @@ namespace HealthCenter
         public void InitializeDependencies()
         {
             var builder = new ContainerBuilder();
+
+            builder.RegisterType<AccessTypeHandler>().As<IAccessTypeHandler>().SingleInstance();
 
             builder.RegisterAssemblyTypes(AppDomain.CurrentDomain.GetAssemblies())
               .Where(type => type.GetInterface(typeof(IPage).Name) != null)

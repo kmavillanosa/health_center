@@ -224,6 +224,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\AccessTypeHandler.cs" />
     <Compile Include="Utility\DialogActivator.cs" />
     <Compile Include="Utility\ExcelReports.cs" />
     <Compile Include="Utility\OverlayHelper.cs" />
