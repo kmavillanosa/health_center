@@ -12,6 +12,17 @@ namespace HealthCenter
         Male = 1,
         Female = 2,
     }
+
+    public enum CivilStatus
+    {
+        Single = 0,
+        Married = 1,
+        Divorced = 2,
+        Separated = 3,
+        Widowed = 4
+    }
+
+
     [Table("person"),Category("Person information"),ReadOnly(true)]
     public class Person : EntityBase
     {
@@ -53,8 +64,10 @@ namespace HealthCenter
             }
         }
 
-
+        public CivilStatus CivilStatus { get; set; } = CivilStatus.Single;
+        
         public PersonGender Gender { get; set; } = PersonGender.NotDefined;
+        public string CivilPartnerName { get; set; }
 
         [DisplayName("Date of birth")]
         public DateTime? BirthDate { get; set; }

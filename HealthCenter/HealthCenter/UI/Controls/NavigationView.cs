@@ -145,5 +145,10 @@ namespace HealthCenter.UI.Controls
             AccountsView.Revalidate();
             AccountsView.Revalidate();
         }
+
+        private void ModulePanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

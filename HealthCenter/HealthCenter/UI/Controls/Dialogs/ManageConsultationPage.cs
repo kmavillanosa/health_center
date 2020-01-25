@@ -48,11 +48,27 @@ namespace HealthCenter.UI
             Controls.OfType<RichTextBox>().ToList().ForEach(x => x.DataBindings.Clear());
             RemarksTxt.DataBindings.Add("text", data, "Remarks");
             DiagnosisTxt.DataBindings.Add("text", data, "Diagnosis");
+
+            cbgender.DataSource = Enum.GetNames(typeof(PersonGender));
+
         }
 
         public void SetModelData()
         {
             Data.AilmentGroupId = (int)ailmentCb.SelectedValue;
+
+            Data.ExpectedChildGender = (PersonGender)Enum.Parse(typeof(PersonGender), cbgender.Text);
+            Data.PregnancyDueDate = dueDateDtp.Value;
+            Data.Weight = WeightTxt.Text;
+            Data.Height = HeightTxt.Text;
+            Data.BloodPressure = BpTxt.Text;
+
+
+        }
+
+        private void ManageConsultationPage_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

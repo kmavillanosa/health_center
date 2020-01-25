@@ -42,8 +42,10 @@ namespace HealthCenter
             txtmname.DataBindings.Add("text", data, "MiddleName");
             AddressTxt.DataBindings.Add("text", data, "Address");
             txtsuffix.DataBindings.Add("text", data, "Suffix");
+            txtSpouseName.DataBindings.Add("text", data, "CivilPartnerName");
 
-           
+
+
         }
 
         public void SetModelData()
@@ -58,11 +60,13 @@ namespace HealthCenter
             }
             Data.CategoryId = (int)cbcategory.SelectedValue;
             Data.Gender = (PersonGender)Enum.Parse(typeof(PersonGender), cbgender.Text);
+            Data.CivilStatus = (CivilStatus)Enum.Parse(typeof(CivilStatus), cvCb.Text);
             Data.FirstName = txtfname.Text;
             Data.LastName = txtlname.Text;
             Data.MiddleName = txtmname.Text;
             Data.Address = AddressTxt.Text;
             Data.Suffix = txtsuffix.Text;
+            Data.CivilPartnerName = txtSpouseName.Text;
 
 
         }
@@ -77,6 +81,9 @@ namespace HealthCenter
                 cbcategory.ValueMember = "Id";
 
                 cbcategory.SelectedValue = Data.CategoryId;
+
+                cvCb.DataSource = Enum.GetNames(typeof(CivilStatus));
+                cvCb.Text = Data.CivilStatus.ToString();
 
                 cbgender.DataSource = Enum.GetNames(typeof(PersonGender));
                 cbgender.Text = Data.Gender.ToString();

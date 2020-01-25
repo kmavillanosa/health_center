@@ -46,33 +46,47 @@ namespace HealthCenter
 
         public async void SetModelData()
         {
-            int LastpersonId = 0;
-            if(CurrentPerson.Id == 0)
+            try
             {
-                LastpersonId = await HealthCenterService.CreateProfile(CurrentPerson);
-            }
+                int LastpersonId = 0;
+                if (CurrentPerson.Id == 0)
+                {
+                    LastpersonId = await HealthCenterService.CreateProfile(CurrentPerson);
+                }
 
 
-            var consultation = new Consultation()
-            {
-                PersonId = (LastpersonId != 0) ? LastpersonId : CurrentPerson.Id,
-                AilmentGroupId = (int)ailmentCb.SelectedValue,
-                Diagnosis = DiagnosisTxt.Text,
-                Remarks = RemarksTxt.Text
-            };
-
-            var lastConsultationId = await HealthCenterService.CreateMedicalConsultation(consultation);
-
-            if (lastConsultationId != 0)
-            {
-                Data = new EventLogs()
+                var consultation = new Consultation()
                 {
                     PersonId = (LastpersonId != 0) ? LastpersonId : CurrentPerson.Id,
-                    ConsultationId = lastConsultationId,
-
+                    AilmentGroupId = (int)ailmentCb.SelectedValue,
+                    Diagnosis = DiagnosisTxt.Text,
+                    Remarks = RemarksTxt.Text,
+                    ExpectedChildGender = (PersonGender)Enum.Parse(typeof(PersonGender), cbgender.Text),
+                    PregnancyDueDate = dueDateDtp.Value,
+                    Weight = WeightTxt.Text,
+                    Height = HeightTxt.Text,
+                    BloodPressure = BpTxt.Text
                 };
-            }
 
+
+                var lastConsultationId = await HealthCenterService.CreateMedicalConsultation(consultation);
+
+                if (lastConsultationId != 0)
+                {
+                    Data = new EventLogs()
+                    {
+                        PersonId = (LastpersonId != 0) ? LastpersonId : CurrentPerson.Id,
+                        ConsultationId = lastConsultationId,
+
+                    };
+                }
+
+            }
+            catch
+            {
+
+            }
+           
 
         }
 
@@ -87,6 +101,7 @@ namespace HealthCenter
             RemarksTxt.DataBindings.Add("text", CurrentConsultation, "Remarks");
             DiagnosisTxt.DataBindings.Add("text", CurrentConsultation, "Diagnosis");
 
+            cbgender.DataSource = Enum.GetNames(typeof(PersonGender));
         }
 
         private void ManageConsultationPage_OnAilmentsLoaded(object sender, CollectionLoadedEventArgs<IEnumerable<Ailments>> e)
@@ -118,6 +133,46 @@ namespace HealthCenter
                 CurrentPerson = currentpage.Data;
                 propertyGrid1.SelectedObject = CurrentPerson;
             });
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ailmentCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

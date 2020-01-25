@@ -31,22 +31,22 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NavigationView));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.button3 = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ModulePanel = new System.Windows.Forms.Panel();
             this.CurrentViewLbl = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -76,25 +76,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1270, 808);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.ImageIndex = 3;
-            this.button3.ImageList = this.imageList1;
-            this.button3.Location = new System.Drawing.Point(3, 279);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(193, 60);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Accounts";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
@@ -123,25 +104,14 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Left;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(100, 0);
+            this.label2.Location = new System.Drawing.Point(79, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1062, 74);
+            this.label2.Size = new System.Drawing.Size(965, 74);
             this.label2.TabIndex = 4;
             this.label2.Text = "Puerto Princesa City Health Office Nutrition Division Monitoring and Record Syste" +
     "m (PPCHOND-MARS)";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = global::HealthCenter.Properties.Resources.responsive;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 74);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // button5
             // 
@@ -153,6 +123,70 @@
             this.button5.Text = "Logout";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.ModulePanel);
+            this.panel2.Controls.Add(this.CurrentViewLbl);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(202, 83);
+            this.panel2.Name = "panel2";
+            this.tableLayoutPanel1.SetRowSpan(this.panel2, 5);
+            this.panel2.Size = new System.Drawing.Size(1065, 722);
+            this.panel2.TabIndex = 7;
+            // 
+            // ModulePanel
+            // 
+            this.ModulePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ModulePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ModulePanel.Location = new System.Drawing.Point(0, 30);
+            this.ModulePanel.Name = "ModulePanel";
+            this.ModulePanel.Size = new System.Drawing.Size(1065, 692);
+            this.ModulePanel.TabIndex = 4;
+            this.ModulePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.ModulePanel_Paint);
+            // 
+            // CurrentViewLbl
+            // 
+            this.CurrentViewLbl.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.CurrentViewLbl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.CurrentViewLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CurrentViewLbl.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.CurrentViewLbl.Location = new System.Drawing.Point(0, 0);
+            this.CurrentViewLbl.Name = "CurrentViewLbl";
+            this.CurrentViewLbl.Size = new System.Drawing.Size(1065, 30);
+            this.CurrentViewLbl.TabIndex = 5;
+            this.CurrentViewLbl.Text = "CurrentView";
+            this.CurrentViewLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.ImageIndex = 3;
+            this.button3.ImageList = this.imageList1;
+            this.button3.Location = new System.Drawing.Point(3, 279);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(193, 60);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Accounts";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = global::HealthCenter.Properties.Resources.download;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(79, 74);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // button1
             // 
@@ -168,7 +202,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(193, 57);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Records";
+            this.button1.Text = "Patient Records";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -187,7 +221,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(193, 62);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Events and Consultations";
+            this.button2.Text = "Consultations and Reports";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -211,39 +245,6 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.ModulePanel);
-            this.panel2.Controls.Add(this.CurrentViewLbl);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(202, 83);
-            this.panel2.Name = "panel2";
-            this.tableLayoutPanel1.SetRowSpan(this.panel2, 5);
-            this.panel2.Size = new System.Drawing.Size(1065, 722);
-            this.panel2.TabIndex = 7;
-            // 
-            // ModulePanel
-            // 
-            this.ModulePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ModulePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ModulePanel.Location = new System.Drawing.Point(0, 30);
-            this.ModulePanel.Name = "ModulePanel";
-            this.ModulePanel.Size = new System.Drawing.Size(1065, 692);
-            this.ModulePanel.TabIndex = 4;
-            // 
-            // CurrentViewLbl
-            // 
-            this.CurrentViewLbl.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.CurrentViewLbl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.CurrentViewLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CurrentViewLbl.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.CurrentViewLbl.Location = new System.Drawing.Point(0, 0);
-            this.CurrentViewLbl.Name = "CurrentViewLbl";
-            this.CurrentViewLbl.Size = new System.Drawing.Size(1065, 30);
-            this.CurrentViewLbl.TabIndex = 5;
-            this.CurrentViewLbl.Text = "CurrentView";
-            this.CurrentViewLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // NavigationView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,8 +256,8 @@
             this.Load += new System.EventHandler(this.NavigationView_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

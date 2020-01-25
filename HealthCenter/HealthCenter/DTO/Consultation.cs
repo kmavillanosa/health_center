@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace HealthCenter
 {
+
+
+
     [Table("medical_consultation")]
     public class Consultation : EntityBase
     {
@@ -34,6 +37,15 @@ namespace HealthCenter
 
         public string Diagnosis { get; set; }
         public string Remarks { get; set; }
+
+
+        public string BloodPressure { get; set; }
+        public string Weight { get; set; }
+        public string Height { get; set; }
+        public DateTime PregnancyDueDate { get; set; }
+
+        public PersonGender ExpectedChildGender { get; set; }
+
 
         [Computed, DisplayName("Consultation date")]
         public override DateTime? LastModified { get; set; }

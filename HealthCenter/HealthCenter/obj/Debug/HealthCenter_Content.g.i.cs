@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("utility/accesstypehandler.jsx")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/download.png")]
 
 
