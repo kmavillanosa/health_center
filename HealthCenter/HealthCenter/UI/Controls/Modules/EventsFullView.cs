@@ -47,6 +47,9 @@ namespace HealthCenter.UI.Controls.Modules
 
         private void LoadEventParticipantChart()
         {
+
+         
+
             DetailChart.Series.Clear();
             DetailChart.AxisX.Clear();
             DetailChart.Series = new SeriesCollection

@@ -35,23 +35,30 @@ namespace HealthCenter.UI.Controls
             var records = ControlsFactory.Resolve<RecordsView>();
             OnUserControlChanged += NavigationView_OnUserControlChanged;
 
-
-        }
-
-        private void NavigationView_OnUserControlChanged(object sender, ControlChangedEventArgs<UserControl> e)
-        {
-            ModulePanel.Controls.Clear();
-            e.CurrentControl.Dock = DockStyle.Fill;
-            ModulePanel.Controls.Add(e.CurrentControl);
-
-
             if (AccessTypeHandler.Type != AccountType.Administrator)
             {
                 button3.Enabled = false;
-                button3.Text = "Account Restricted";
                 button3.Visible = false;
             }
+        }
 
+     
+
+        private void NavigationView_OnUserControlChanged(object sender, ControlChangedEventArgs<UserControl> e)
+        {
+            button3.Enabled = true;
+            button3.Visible = true;
+            if (AccessTypeHandler.Type != AccountType.Administrator)
+            {
+                button3.Enabled = false;
+                button3.Visible = false;
+            }
+            ModulePanel.Controls.Clear();
+            e.CurrentControl.Dock = DockStyle.Fill;
+            ModulePanel.Controls.Add(e.CurrentControl);
+      
+
+           
         }
 
         public void OnControlChanged(UserControl control)
@@ -95,6 +102,7 @@ namespace HealthCenter.UI.Controls
 
         private void NavigationView_Load(object sender, EventArgs e)
         {
+          
             GotoRecords();
         }
 

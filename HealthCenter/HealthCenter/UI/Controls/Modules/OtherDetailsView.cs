@@ -23,6 +23,9 @@ namespace HealthCenter.UI.Controls.Modules
             AccessTypeHandler = accessTypeHandler;
             ControlsFactory = controlsFactory;
             GatherDetails();
+
+
+            
         }
 
         public IHealthCenterService HealthCenterService { get; }
@@ -42,11 +45,7 @@ namespace HealthCenter.UI.Controls.Modules
             dtgvailment.DataSource = AilmentListBinding;
 
 
-            if (AccessTypeHandler.Type == AccountType.Guest)
-            {
-                toolStripButton1.Enabled = false;
-                toolStripButton2.Enabled = false;
-            }
+         
 
 
         }
@@ -116,6 +115,17 @@ namespace HealthCenter.UI.Controls.Modules
                             HealthCenterService.ModifyCategory(data);
                         });
                     break;
+            }
+        }
+
+        private void OtherDetailsView_Load(object sender, EventArgs e)
+        {
+            if (AccessTypeHandler.Type == AccountType.Guest)
+            {
+                toolStripButton1.Enabled = false;
+                toolStripButton2.Enabled = false;
+                dtgvailment.Columns[0].Visible = false;
+                dtgvCategory.Columns[0].Visible = false;
             }
         }
     }

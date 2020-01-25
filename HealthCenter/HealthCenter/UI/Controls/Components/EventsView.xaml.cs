@@ -33,12 +33,25 @@ namespace HealthCenter
         private ObservableCollection<PersonEvents> _events;
 
         public IHealthCenterService HealthCenterService { get; }
+        public IAccessTypeHandler AccessTypeHandler { get; }
 
-        public EventsView(IHealthCenterService healthCenterService)
+        public EventsView(IHealthCenterService healthCenterService, IAccessTypeHandler accessTypeHandler)
         {
             InitializeComponent();
             PropertyChanged += EventsView_PropertyChanged;
+            Loaded += EventsView_Loaded;
             HealthCenterService = healthCenterService;
+            AccessTypeHandler = accessTypeHandler;
+        }
+
+        private void EventsView_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (AccessTypeHandler.Type == AccountType.Guest)
+            {
+                AddBtn.IsEnabled = false;
+                ExportReportBtn.IsEnabled = false;
+            }
+
         }
 
         private void TriggerProp(string property) { PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property)); }

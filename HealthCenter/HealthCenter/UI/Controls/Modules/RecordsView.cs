@@ -52,20 +52,9 @@ namespace HealthCenter.UI.Controls.Modules
                 CreateBtn.Enabled = false;
                 toolStripButton1.Enabled = false;
 
-
                 dtgvPerson.Columns[1].Visible = false;
                 dtgvPerson.Columns[2].Visible = false;
                 dtgvConsultations.Columns[0].Visible = false;
-
-
-
-                  //.Where(dtgv => dtgv.Tag.ToString() == "GridForRestriction");
-                  //.Select(dtg => dtg.Columns).ToList()
-                  //      .ForEach(col => col.OfType<DataGridViewButtonColumn>()
-                  //      .ToList()
-                  //      .ForEach(cc => { cc.Visible = false; }));
-
-
             }
         }
 

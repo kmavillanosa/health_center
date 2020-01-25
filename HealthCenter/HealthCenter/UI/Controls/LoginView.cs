@@ -39,14 +39,14 @@ namespace HealthCenter.UI.Controls
         {
             
             txt_UserName.Text = "myraxys";
-           // txt_UserName.Text = "kmavillanosa";
+           /// txt_UserName.Text = "kmavillanosa";
             Txt_Password.Text = "zxczxc";
             Login();
 
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            StartInject();
+           // StartInject();
         }
 
 
@@ -75,13 +75,13 @@ namespace HealthCenter.UI.Controls
 
                     
                     AccountContextService.SetAccount(data, lastLogId);
+                    AccessTypeHandler.SetType(data.Type);
 
-                    if(data.Type != AccountType.None)
+                    if (data.Type != AccountType.None)
                     {
 
                         ControlsFactory.ShellView.Controls.Clear();
                         var dd = ControlsFactory.Resolve<NavigationView>();
-                        AccessTypeHandler.SetType(data.Type);
                         dd.AccountType = data.Type;
                         dd.Dock = DockStyle.Fill;
 
@@ -135,6 +135,27 @@ namespace HealthCenter.UI.Controls
             Environment.Exit(0);
         }
 
-      
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void txt_UserName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Login();
+
+            }
+        }
+
+        private void Txt_Password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Login();
+
+            }
+        }
     }
 }

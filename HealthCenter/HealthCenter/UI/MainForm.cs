@@ -46,7 +46,8 @@ namespace HealthCenter
             .Where(type => type.GetInterface(typeof(IModule).Name) != null)
             .AsImplementedInterfaces().SingleInstance();
 
-            builder.RegisterType<AccountContextService>().As<IAccountContextService>().SingleInstance();
+            builder.RegisterType<AccountContextService>()
+                .As<IAccountContextService>().SingleInstance();
 
             builder.Register(x=> 
             {
