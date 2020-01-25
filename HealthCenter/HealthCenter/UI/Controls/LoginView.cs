@@ -52,6 +52,7 @@ namespace HealthCenter.UI.Controls
 
         private void LoginView_OnControlPageChanged(object sender, ControlChangedEventArgs<UserControl> e)
         {
+
             MainForm.Controls.Clear();
             e.CurrentControl.Dock = DockStyle.Fill;
             MainForm.Controls.Add(e.CurrentControl);
@@ -72,21 +73,31 @@ namespace HealthCenter.UI.Controls
                 if (data.AccountStatus == AccountStatus.Active)
                 {
                     var lastLogId = await HealthCenterService.CreateAccountLog(new AccountLogs { AccountId = data.Id });
-
                     
                     AccountContextService.SetAccount(data, lastLogId);
-                    AccessTypeHandler.SetType(data.Type);
+                    
 
-                    if (data.Type != AccountType.None)
+                    ControlsFactory.ShellView.Controls.Clear();
+                    var dd = ControlsFactory.Resolve<NavigationView>();
+
+                    if(data.Type != AccountType.None)
                     {
-
-                        ControlsFactory.ShellView.Controls.Clear();
-                        var dd = ControlsFactory.Resolve<NavigationView>();
-                        dd.AccountType = data.Type;
-                        dd.Dock = DockStyle.Fill;
-
-                        ControlsFactory.ShellView.Controls.Add(dd);
+                        AccessTypeHandler.SetType(data.Type);
                     }
+
+                    if (data.Type != AccountType.Administrator)
+                    {
+                        dd.button3.Visible = false;
+                    }
+                    else
+                    {
+                        dd.button3.Visible = true;
+                        dd.button3.Enabled = true;
+                    }
+
+                    dd.AccountType = data.Type;
+                    dd.Dock = DockStyle.Fill;
+                    ControlsFactory.ShellView.Controls.Add(dd);
                 }
                 else
                 {

@@ -190,5 +190,10 @@ namespace HealthCenter.UI.Controls.Modules
                 LoadDetails();
             });
         }
+
+        public void Revalidate()
+        {
+
+        }
     }
 }

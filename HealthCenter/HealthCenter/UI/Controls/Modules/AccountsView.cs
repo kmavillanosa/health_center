@@ -82,5 +82,10 @@ namespace HealthCenter.UI.Controls.Modules
                     break;
             }
         }
+
+        public void Revalidate()
+        {
+
+        }
     }
 }

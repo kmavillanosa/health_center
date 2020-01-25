@@ -9,5 +9,6 @@ namespace HealthCenter
     public interface IModule : IUIComponent
     {
         AccountType AccountType { get; set; }
+        void Revalidate();
     }
 }

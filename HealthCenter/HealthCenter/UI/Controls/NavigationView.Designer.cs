@@ -31,22 +31,22 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NavigationView));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.button3 = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.ModulePanel = new System.Windows.Forms.Panel();
-            this.CurrentViewLbl = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.ModulePanel = new System.Windows.Forms.Panel();
+            this.CurrentViewLbl = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -75,6 +75,25 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1270, 808);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.ImageIndex = 3;
+            this.button3.ImageList = this.imageList1;
+            this.button3.Location = new System.Drawing.Point(3, 279);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(193, 60);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Accounts";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // imageList1
             // 
@@ -113,69 +132,6 @@
     "m (PPCHOND-MARS)";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button5
-            // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.Location = new System.Drawing.Point(1169, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(92, 34);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "Logout";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.ModulePanel);
-            this.panel2.Controls.Add(this.CurrentViewLbl);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(202, 83);
-            this.panel2.Name = "panel2";
-            this.tableLayoutPanel1.SetRowSpan(this.panel2, 5);
-            this.panel2.Size = new System.Drawing.Size(1065, 722);
-            this.panel2.TabIndex = 7;
-            // 
-            // ModulePanel
-            // 
-            this.ModulePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ModulePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ModulePanel.Location = new System.Drawing.Point(0, 30);
-            this.ModulePanel.Name = "ModulePanel";
-            this.ModulePanel.Size = new System.Drawing.Size(1065, 692);
-            this.ModulePanel.TabIndex = 4;
-            // 
-            // CurrentViewLbl
-            // 
-            this.CurrentViewLbl.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.CurrentViewLbl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.CurrentViewLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CurrentViewLbl.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.CurrentViewLbl.Location = new System.Drawing.Point(0, 0);
-            this.CurrentViewLbl.Name = "CurrentViewLbl";
-            this.CurrentViewLbl.Size = new System.Drawing.Size(1065, 30);
-            this.CurrentViewLbl.TabIndex = 5;
-            this.CurrentViewLbl.Text = "CurrentView";
-            this.CurrentViewLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.ImageIndex = 3;
-            this.button3.ImageList = this.imageList1;
-            this.button3.Location = new System.Drawing.Point(3, 279);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(193, 60);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Accounts";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -186,6 +142,17 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // button5
+            // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.Location = new System.Drawing.Point(1169, 3);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(92, 34);
+            this.button5.TabIndex = 0;
+            this.button5.Text = "Logout";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button1
             // 
@@ -244,6 +211,39 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.ModulePanel);
+            this.panel2.Controls.Add(this.CurrentViewLbl);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(202, 83);
+            this.panel2.Name = "panel2";
+            this.tableLayoutPanel1.SetRowSpan(this.panel2, 5);
+            this.panel2.Size = new System.Drawing.Size(1065, 722);
+            this.panel2.TabIndex = 7;
+            // 
+            // ModulePanel
+            // 
+            this.ModulePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ModulePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ModulePanel.Location = new System.Drawing.Point(0, 30);
+            this.ModulePanel.Name = "ModulePanel";
+            this.ModulePanel.Size = new System.Drawing.Size(1065, 692);
+            this.ModulePanel.TabIndex = 4;
+            // 
+            // CurrentViewLbl
+            // 
+            this.CurrentViewLbl.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.CurrentViewLbl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.CurrentViewLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CurrentViewLbl.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.CurrentViewLbl.Location = new System.Drawing.Point(0, 0);
+            this.CurrentViewLbl.Name = "CurrentViewLbl";
+            this.CurrentViewLbl.Size = new System.Drawing.Size(1065, 30);
+            this.CurrentViewLbl.TabIndex = 5;
+            this.CurrentViewLbl.Text = "CurrentView";
+            this.CurrentViewLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // NavigationView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,8 +255,8 @@
             this.Load += new System.EventHandler(this.NavigationView_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -270,11 +270,11 @@
         private System.Windows.Forms.Panel ModulePanel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label CurrentViewLbl;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Button button3;
     }
 }

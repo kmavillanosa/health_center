@@ -27,11 +27,14 @@ namespace HealthCenter
         {
             var builder = new ContainerBuilder();
 
-            builder.RegisterType<AccessTypeHandler>().As<IAccessTypeHandler>().SingleInstance();
+            builder.RegisterType<AccessTypeHandler>()
+                .As<IAccessTypeHandler>()
+                .SingleInstance();
 
             builder.RegisterAssemblyTypes(AppDomain.CurrentDomain.GetAssemblies())
               .Where(type => type.GetInterface(typeof(IPage).Name) != null)
-              .AsImplementedInterfaces().SingleInstance();
+              .AsImplementedInterfaces()
+              .SingleInstance();
 
             builder.RegisterAssemblyTypes(AppDomain.CurrentDomain.GetAssemblies())
              .Where(type => type.GetInterface(typeof(IDialog).Name) != null)
@@ -39,26 +42,30 @@ namespace HealthCenter
 
             builder.RegisterAssemblyTypes(AppDomain.CurrentDomain.GetAssemblies())
           .Where(type => type.GetInterface(typeof(IComponent).Name) != null)
-          .AsImplementedInterfaces().SingleInstance();
+          .AsImplementedInterfaces()
+          .SingleInstance();
 
 
             builder.RegisterAssemblyTypes(AppDomain.CurrentDomain.GetAssemblies())
             .Where(type => type.GetInterface(typeof(IModule).Name) != null)
-            .AsImplementedInterfaces().SingleInstance();
+            .AsImplementedInterfaces()
+            .SingleInstance();
 
-            builder.RegisterType<AccountContextService>()
-                .As<IAccountContextService>().SingleInstance();
+            builder.RegisterType<AccountContextService>().As<IAccountContextService>()
+                .SingleInstance();
 
             builder.Register(x=> 
             {
                 return new ControlsFactory(this);
-            }).As<IControlsFactory>().SingleInstance();
+            }).As<IControlsFactory>()
+            .SingleInstance();
 
             builder.Register(x => 
             {
                 return new HealthCenterService(Properties.Settings.Default.Constring);
 
-            }).As<IHealthCenterService>().SingleInstance();
+            }).As<IHealthCenterService>()
+            .SingleInstance();
 
             AppContainer = builder.Build();
 

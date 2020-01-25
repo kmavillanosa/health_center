@@ -56,6 +56,16 @@ namespace HealthCenter.UI.Controls.Modules
                 dtgvPerson.Columns[2].Visible = false;
                 dtgvConsultations.Columns[0].Visible = false;
             }
+            else
+            {
+                button1.Enabled = true;
+                CreateBtn.Enabled = true;
+                toolStripButton1.Enabled = true;
+
+                dtgvPerson.Columns[1].Visible = true;
+                dtgvPerson.Columns[2].Visible = true;
+                dtgvConsultations.Columns[0].Visible = true;
+            }
         }
 
         private void RecordsView_Load(object sender, EventArgs e)
@@ -183,6 +193,30 @@ namespace HealthCenter.UI.Controls.Modules
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public void Revalidate()
+        {
+            if (AccessTypeHandler.Type == AccountType.Guest)
+            {
+                button1.Enabled = false;
+                CreateBtn.Enabled = false;
+                toolStripButton1.Enabled = false;
+
+                dtgvPerson.Columns[1].Visible = false;
+                dtgvPerson.Columns[2].Visible = false;
+                dtgvConsultations.Columns[0].Visible = false;
+            }
+            else
+            {
+                button1.Enabled = true;
+                CreateBtn.Enabled = true;
+                toolStripButton1.Enabled = true;
+
+                dtgvPerson.Columns[1].Visible = true;
+                dtgvPerson.Columns[2].Visible = true;
+                dtgvConsultations.Columns[0].Visible = true;
+            }
         }
     }
 }

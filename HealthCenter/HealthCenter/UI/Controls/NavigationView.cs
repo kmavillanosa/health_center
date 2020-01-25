@@ -35,35 +35,30 @@ namespace HealthCenter.UI.Controls
             var records = ControlsFactory.Resolve<RecordsView>();
             OnUserControlChanged += NavigationView_OnUserControlChanged;
 
-            if (AccessTypeHandler.Type != AccountType.Administrator)
-            {
-                button3.Enabled = false;
-                button3.Visible = false;
-            }
+          
         }
 
      
 
         private void NavigationView_OnUserControlChanged(object sender, ControlChangedEventArgs<UserControl> e)
         {
-            button3.Enabled = true;
-            button3.Visible = true;
             if (AccessTypeHandler.Type != AccountType.Administrator)
             {
                 button3.Enabled = false;
                 button3.Visible = false;
             }
+
             ModulePanel.Controls.Clear();
             e.CurrentControl.Dock = DockStyle.Fill;
             ModulePanel.Controls.Add(e.CurrentControl);
-      
 
-           
+        
+
         }
 
         public void OnControlChanged(UserControl control)
         {
-
+         
             OnUserControlChanged?.Invoke(this, new ControlChangedEventArgs<UserControl> { CurrentControl = control });
         }
 
@@ -72,6 +67,7 @@ namespace HealthCenter.UI.Controls
         {
             CurrentViewLbl.Text = "Records";
             var data = ControlsFactory.Resolve<RecordsView>();
+            data.Revalidate();
             OnControlChanged(data);
         }
 
@@ -79,6 +75,8 @@ namespace HealthCenter.UI.Controls
         {
             CurrentViewLbl.Text = "Events";
             var data = ControlsFactory.Resolve<EventsFullView>();
+            data.Revalidate();
+
             OnControlChanged(data);
         }
 
@@ -86,12 +84,15 @@ namespace HealthCenter.UI.Controls
         {
             CurrentViewLbl.Text = "Accounts";
             var data = ControlsFactory.Resolve<AccountsView>();
+            data.Revalidate();
+
             OnControlChanged(data);
         }
         public void GotoOtherDetailsView()
         {
             CurrentViewLbl.Text = "Other details";
             var data = ControlsFactory.Resolve<OtherDetailsView>();
+            data.Revalidate();
             OnControlChanged(data);
         }
 
